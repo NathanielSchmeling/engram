@@ -26,7 +26,7 @@ def run():
     eng = Engram()
     script = [
         "Hi, I'm building a blockchain-based memory system for AI.",
-        "My name is Sam and I work mostly in Python.",
+        "My name is Nate and I work mostly in Python.",
         "Let's call the unit of memory a 'trace', not an episode.",
         "I prefer minimal dependencies.",
     ]

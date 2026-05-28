@@ -1,54 +1,147 @@
 # Engram
 
-*A chain that is the self. Memory as the unit of state.*
+*Verifiable, portable memory for AI systems.*
 
-Most AI+blockchain projects bolt one onto the other. Engram instead rebuilds
-the mechanics around cognition: the unit of state is **memory**, not
-transactions. An unbroken hash-linked chain doesn't *record* the self — it
-**is** the self. Its unbrokenness is the continuity; you can prove the mind is
-the same mind over time, something no brain can do.
+Engram is an experimental architecture for AI memory that treats the entire
+history of an AI's interactions as a hash-linked, tamper-evident chain. Every
+change to the AI's memory — a new fact, a reinforcement, a forgetting — is a
+block. The chain is the source of truth; the working memory is a cache
+rebuilt by replaying it.
+
+The result is an AI whose memory is **auditable from end to end**, **portable
+across different language models**, and **verifiable without trusting whoever
+stored it**.
+
+## Why this might matter
+
+Most AI assistants store their memory in a database. That works fine for the
+common case, but it gives you no answer when someone asks harder questions:
+
+- *Can you prove what the AI knew when it made that recommendation?*
+- *Can you show me, with cryptographic certainty, that nothing was added or
+  removed from this history?*
+- *Can I move my assistant's memory to a different provider and have them
+  verify it's the genuine, untampered self?*
+- *When the model changed last month, did the assistant's prior history
+  survive intact?*
+
+A database can't answer any of these without you trusting whoever runs it.
+Engram is designed so the *receiver* can verify the answer on their own — the
+chain re-derives itself from genesis on every load, and any modification to
+any past block is caught immediately.
+
+Concrete settings where this property could matter:
+
+- **Regulated domains** (healthcare, legal, financial) where AI-assisted
+  decisions need a defensible audit trail.
+- **Debugging long-running agents** — when an agent does something unexpected,
+  the entire history of what it was told and what it concluded is
+  reconstructable, ordered, and provably untampered.
+- **Compliance and explainability** — produce evidence that a model wasn't
+  fed certain data, or that a given memory was actually formed at the time
+  claimed.
+- **Portable personal context** — a user could take their assistant's memory
+  with them between providers, with cryptographic proof of integrity.
 
 ## The core idea
 
 - **The chain is the skeleton.** Each block commits to the previous one. The
-  line back to genesis is what makes this one continuous self. It stays
-  cryptographically exact and verifiable — **lossless identity**.
-- **Episodes are the content.** Each experience is consolidated into a *delta*:
-  the change it made to the self (memories born, reinforced, or superseded).
-  The content layer forgets like a mind — **lossy memory**.
-- **Forgetting is forward compression.** Old, low-salience memories merge into
-  gist or tombstone; high-salience ones survive verbatim; hashes always persist.
-  Modeled on a brain, but deliberate and tunable rather than uncontrolled drift.
+  unbroken line back to genesis is what makes the AI's memory one continuous,
+  verifiable history.
+- **Episodes are the content.** Each experience is consolidated into a
+  *delta*: the changes it made to the self — memories born, reinforced, or
+  superseded. The working memory is a cache; the chain is the truth.
+- **Forgetting is recorded too.** Old, low-salience memories merge into gist
+  or tombstone; high-salience ones survive verbatim. Crucially, the act of
+  forgetting itself is a block, so the chain remains a complete record even
+  after compression.
 
-One user message = one block. Consolidation does new / reinforce / supersede
-only, so the chain stays append-only and verifiable.
+One user message = one block. Consolidation produces only three operations —
+new, reinforce, supersede — plus a fourth (`gist`) emitted by compression.
+The chain is append-only and replayable from genesis.
+
+## What's been demonstrated
+
+Each property below has a passing test in the repo:
+
+1. **Continuity is provable.** Verify the chain from genesis; tamper with any
+   past block; verification fails immediately.
+   `python -m engram.demo`
+
+2. **The chain is the memory.** Wipe the entire working memory store and
+   rebuild it by replaying the chain. The resulting self is bit-for-bit
+   identical (same `state_root` hash).
+   `python -m engram.prove_chain_is_memory`
+
+3. **The self survives shutdown.** Save the chain to disk, destroy the
+   process, reload from disk. The woken self has the same `state_root` as
+   the one that shut down. A tampered file is refused.
+   `python -m engram.prove_self_survives_restart`
+
+4. **It forgets, and the forgetting is on the chain.** Old low-salience
+   memories merge into gist; a compressed self still survives replay
+   identically.
+   `python -m engram.demo_compression`
+
+5. **Identity is portable across language models.** Build a self with one LLM
+   (e.g. `llama3.2:3b`), persist it, wake it with a different LLM (e.g.
+   `qwen2.5:7b`). The episodic content — every memory, its salience, the
+   gist structure — is identical across the swap.
+   `python -m engram.prove_identity_is_portable`
 
 ## Architecture
 
-| file              | role                                                        |
-|-------------------|-------------------------------------------------------------|
-| `backend.py`      | the only file that talks to a model (Ollama by default)     |
-| `memory.py`       | episodes + salience/recency retrieval — the content layer   |
-| `chain.py`        | hash-linked blocks, state roots, verify-from-genesis        |
-| `consolidate.py`  | the heart: experience → delta (new/reinforce/supersede)     |
-| `compress.py`     | forward compression — the distinctive feature               |
-| `engram.py`       | ties it together; the per-message loop                      |
-| `demo.py`         | proves the three properties                                 |
+| file                       | role                                                        |
+|----------------------------|-------------------------------------------------------------|
+| `backend.py`               | LLM and embedding calls (Ollama by default)                 |
+| `memory.py`                | episodes + similarity-floor retrieval (the cache layer)     |
+| `chain.py`                 | hash-linked blocks, state roots, verify, save/load          |
+| `consolidate.py`           | experience → delta (new / reinforce / supersede)            |
+| `compress.py`              | salience-weighted forward compression; emits gist blocks    |
+| `replay.py`                | rebuilds the working memory from the chain alone            |
+| `engram.py`                | ties it together; per-message loop; `save` / `load`         |
+| `demo*.py`, `prove_*.py`   | demos and tests for the five properties above               |
+| `inspect_retrieval.py`     | diagnostic for what the self knows and what it surfaces     |
+
+## Model support
+
+The architecture is model-agnostic. `backend.py` exposes two functions —
+`llm(prompt) -> str` and `embed(text) -> list[float]` — that anything can
+implement: Ollama, OpenAI, Anthropic, Gemini, vLLM, llama.cpp, anything else
+that produces text and embeddings.
+
+In practice:
+
+- **Consolidation quality scales with model capability.** The system extracts
+  episodic memories from messages by asking the model to return structured
+  JSON. Very small models (~3B and below) sometimes drop facts or produce
+  near-duplicates. ~7B-class and above tend to do well. Frontier models do
+  best but cost per turn.
+- **Embeddings can come from a different source than the LLM.** You can use
+  Claude for cognition and a separate embedding model (any local one, or
+  OpenAI/Voyage/Cohere) for retrieval.
+- **The chain is portable across LLMs in a specific sense.** The episodic
+  content is model-independent; the embedding vectors are regenerated by
+  whatever model wakes the self. So a self built on one model and woken on
+  another has the same memories with potentially different retrieval
+  behavior. That's the right division — identity is portable, retrieval
+  geometry is local to the cognition substrate.
+
+The included examples use Ollama because it's free and runs locally.
 
 ## Run it
 
-Offline first, to see the chain mechanics with no setup:
+Offline first, to see the chain mechanics with no models installed:
 
 ```bash
 python -m engram.demo --fake
 ```
 
-Then for real, with a free local model:
+Then for real with local models via [Ollama](https://ollama.com):
 
 ```bash
-# install Ollama from https://ollama.com
-ollama pull llama3.2:3b
-ollama pull nomic-embed-text
+ollama pull qwen2.5:7b           # for consolidation and replies
+ollama pull nomic-embed-text     # for embeddings
 pip install ollama
 python -m engram.demo
 ```
@@ -58,25 +151,46 @@ python -m engram.demo
 ```python
 from engram import Engram
 
+# session one — build a self
 eng = Engram()
-print(eng.step("My name is Sam and I work in Python."))
-print(eng.step("What's my name?"))   # shaped by what it registered
+eng.step("My name is Nate, I work in Python.")
+eng.step("Call the unit of memory a 'trace', not an episode.")
+eng.save()                                # writes engram_chain.json
 
-eng.compress()          # forget like a mind; skeleton stays exact
-print(eng.verify())     # 'intact'
-print(eng.snapshot())   # the live self + integrity
+# ... later, possibly with a different LLM ...
+
+eng = Engram.load()                       # verifies + replays the chain
+print(eng.step("What do I call the unit of memory?"))
+print(eng.verify())                       # 'intact'
+print(eng.snapshot())                     # the live self + integrity
 ```
 
-## What the demo proves
+## Status and limits
 
-1. **Continuity is provable** — verify from genesis; tamper with a past block; watch verification fail.
-2. **It forgets like a mind** — recent memories detailed, old ones as gist, raw long gone, hash chain intact.
-3. **History shaped behavior** — replies reflect consolidated past experience it can no longer quote verbatim.
+Engram is a working proof-of-concept of a specific architectural idea, not a
+production system. What works: every property listed above, with passing
+tests. What doesn't:
 
-## Deliberately not built (yet)
+- **No multi-node consensus yet.** This is a single-writer chain. Adding real
+  distributed consensus is the obvious next step but is significant
+  engineering work — and the single-continuous-object design already commits
+  the system to forks resolving to one live thread, which is what blockchain
+  consensus is built to provide.
+- **Consolidation depends on prompt-following quality.** Small models
+  sometimes drop facts. The included prompt has been tuned but is not
+  bulletproof.
+- **The chain is JSON on disk.** Fine for local use; a real deployment would
+  want a binary format and a smarter index.
+- **Embeddings are stored only in the cache.** They're regenerated on every
+  rebuild from chain content, which is correct but slow for very large
+  selves.
 
-Consensus, multiple nodes, networking, tokens, mining. None of that tests the
-core hypothesis. A single-writer local chain is enough to learn whether the
-idea is alive. Add nodes only if it is — and note that the single-continuous-
-object design already commits you to forks resolving to one live thread, which
-is exactly what blockchain consensus is built to do.
+## The philosophical version
+
+For the version of this where it's an extended argument about identity,
+continuity, and what "the self" means when it's a machine — that's in the
+commit history. The short form: by separating identity (in the chain) from
+cognition (in the model), Engram lets the self be portable across processors
+in a way no biological mind can be. A brain's memories *are* its processor;
+Engram's are not. That's the move that makes verifiable AI memory possible
+at all.

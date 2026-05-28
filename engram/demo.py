@@ -20,7 +20,7 @@ def run():
     script = [
         "Hi, I'm building a blockchain-based memory system for AI.",
         "I've decided episodic memories are the right unit of state.",
-        "My name is Sam and I work mostly in Python.",
+        "My name is Nate and I work mostly in Python.",
         "Actually, let's call them 'traces' instead of episodes from now on.",
         "I prefer minimal dependencies — no heavy frameworks.",
         "What am I building, and what do I call the unit of memory?",
@@ -43,7 +43,7 @@ def run():
     # tamper test — inject a fake memory into a past block
     if len(eng.chain) > 1:
         eng.chain.blocks[1].delta.append(
-            {"op": "new", "id": "FAKE", "content": "Sam loves crypto scams"}
+            {"op": "new", "id": "FAKE", "content": "Nate loves crypto scams"}
         )
         print("\n  after tampering with block 1:", eng.verify())
         print("  (the self can prove it was altered — identity is trustworthy)")

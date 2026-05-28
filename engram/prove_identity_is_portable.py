@@ -48,7 +48,7 @@ def build_self_on(model_name):
     eng = Engram()
     for m in [
         "Hi, I'm building a blockchain memory system for AI.",
-        "My name is Sam and I work mostly in Python.",
+        "My name is Nate and I work mostly in Python.",
         "Let's call the unit of memory a 'trace'.",
         "I prefer minimal dependencies.",
     ]:
@@ -112,13 +112,13 @@ def run_fake():
     def fake_llm(p):
         if "new_episodes" in p:
             n[0] += 1
-            facts = ["User's name is Sam", "User works in Python",
+            facts = ["User's name is Nate", "User works in Python",
                      "The unit of memory is called a trace",
                      "User prefers minimal dependencies"]
             f = facts[(n[0] - 1) % len(facts)]
             return ('{"new_episodes":[{"content":"%s","type":"fact",'
                     '"salience":0.8}],"reinforce":[],"supersede":[]}' % f)
-        return "Your name is Sam and you call the unit of memory a trace."
+        return "Your name is Nate and you call the unit of memory a trace."
 
     # two DIFFERENT embedding functions — simulate two different models
     def embed_model_A(t):

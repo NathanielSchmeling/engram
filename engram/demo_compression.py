@@ -27,7 +27,7 @@ def run():
     script = [
         "Hi, I'm building a blockchain memory system for AI.",
         "Random aside: I had a sandwich for lunch today.",
-        "My name is Sam.",
+        "My name is Nate.",
         "The weather is cloudy where I am.",
         "I work mostly in Python.",
         "I mentioned earlier I like coffee in the mornings.",
