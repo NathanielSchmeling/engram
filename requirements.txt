@@ -1,0 +1,3 @@
+# Engram has one optional runtime dependency — the local model client.
+# The chain, memory, consolidation, and compression are pure standard library.
+ollama>=0.3.0

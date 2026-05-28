@@ -1,0 +1,70 @@
+[
+  {
+    "index": 0,
+    "prev_hash": "GENESIS",
+    "timestamp": 1780003832.852299,
+    "raw_ref": "8470ad9cc4b7b8d27840e851a3da20b3a7dd288ff3eef053082dcec8fdf8f25d",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_1",
+        "content": "the user is building a blockchain memory system for AI",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "32ddcf7a88b6f2d9f2fb5c2f7ab142929931327bba6a21f68382160ffd18371b",
+    "hash": "289221917af0442c5a789088669332c64ee0c77c0a2128b3582234a3de3f4205"
+  },
+  {
+    "index": 1,
+    "prev_hash": "289221917af0442c5a789088669332c64ee0c77c0a2128b3582234a3de3f4205",
+    "timestamp": 1780003861.1450016,
+    "raw_ref": "d82cbb8e93d99f00433e2cefd56b0bf6480ec6421ff95c0ee8cf4b22a83a2510",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_2",
+        "content": "the user works mostly in Python",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "ea981762f7055eb57d83277629a78708153db151da37ee6fdd2b5a1197e9cb0e",
+    "hash": "097c65a54f69174cf1e23d73222183c3d7caf4172c391698fb4a354b21995a37"
+  },
+  {
+    "index": 2,
+    "prev_hash": "097c65a54f69174cf1e23d73222183c3d7caf4172c391698fb4a354b21995a37",
+    "timestamp": 1780003892.1511223,
+    "raw_ref": "02320b5d46e85c8d3de936aa47cccc993d48e5a2113244084d7aa9b6f9695da7",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_3",
+        "content": "the user is using 'trace' to refer to a unit of memory in their project",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "2c361da630936b3a83374ead90b345161f1f36bb9ba88b59f450a92bfde29c57",
+    "hash": "481baff44ac6aa1363413662c08d426fe3c7a27f09a6b2c645a143bd350541d3"
+  },
+  {
+    "index": 3,
+    "prev_hash": "481baff44ac6aa1363413662c08d426fe3c7a27f09a6b2c645a143bd350541d3",
+    "timestamp": 1780003926.013345,
+    "raw_ref": "bccd3e947db74e4701dd6eaebe4ea945199431f41a51d96644a4c2e8b0793d81",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_4",
+        "content": "the user prefers minimal dependencies",
+        "type": "preference",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "d9109402fad691dae257f7c177dd8aafebd7f967c27b67a8d99ad27ca3cd7735",
+    "hash": "07a6a2c2f9d2b00f41ca85b6056b84ebf406cc0dc24d172a809a08666ff8e76d"
+  }
+]

@@ -1,0 +1,82 @@
+# Engram
+
+*A chain that is the self. Memory as the unit of state.*
+
+Most AI+blockchain projects bolt one onto the other. Engram instead rebuilds
+the mechanics around cognition: the unit of state is **memory**, not
+transactions. An unbroken hash-linked chain doesn't *record* the self — it
+**is** the self. Its unbrokenness is the continuity; you can prove the mind is
+the same mind over time, something no brain can do.
+
+## The core idea
+
+- **The chain is the skeleton.** Each block commits to the previous one. The
+  line back to genesis is what makes this one continuous self. It stays
+  cryptographically exact and verifiable — **lossless identity**.
+- **Episodes are the content.** Each experience is consolidated into a *delta*:
+  the change it made to the self (memories born, reinforced, or superseded).
+  The content layer forgets like a mind — **lossy memory**.
+- **Forgetting is forward compression.** Old, low-salience memories merge into
+  gist or tombstone; high-salience ones survive verbatim; hashes always persist.
+  Modeled on a brain, but deliberate and tunable rather than uncontrolled drift.
+
+One user message = one block. Consolidation does new / reinforce / supersede
+only, so the chain stays append-only and verifiable.
+
+## Architecture
+
+| file              | role                                                        |
+|-------------------|-------------------------------------------------------------|
+| `backend.py`      | the only file that talks to a model (Ollama by default)     |
+| `memory.py`       | episodes + salience/recency retrieval — the content layer   |
+| `chain.py`        | hash-linked blocks, state roots, verify-from-genesis        |
+| `consolidate.py`  | the heart: experience → delta (new/reinforce/supersede)     |
+| `compress.py`     | forward compression — the distinctive feature               |
+| `engram.py`       | ties it together; the per-message loop                      |
+| `demo.py`         | proves the three properties                                 |
+
+## Run it
+
+Offline first, to see the chain mechanics with no setup:
+
+```bash
+python -m engram.demo --fake
+```
+
+Then for real, with a free local model:
+
+```bash
+# install Ollama from https://ollama.com
+ollama pull llama3.2:3b
+ollama pull nomic-embed-text
+pip install ollama
+python -m engram.demo
+```
+
+## Use it
+
+```python
+from engram import Engram
+
+eng = Engram()
+print(eng.step("My name is Sam and I work in Python."))
+print(eng.step("What's my name?"))   # shaped by what it registered
+
+eng.compress()          # forget like a mind; skeleton stays exact
+print(eng.verify())     # 'intact'
+print(eng.snapshot())   # the live self + integrity
+```
+
+## What the demo proves
+
+1. **Continuity is provable** — verify from genesis; tamper with a past block; watch verification fail.
+2. **It forgets like a mind** — recent memories detailed, old ones as gist, raw long gone, hash chain intact.
+3. **History shaped behavior** — replies reflect consolidated past experience it can no longer quote verbatim.
+
+## Deliberately not built (yet)
+
+Consensus, multiple nodes, networking, tokens, mining. None of that tests the
+core hypothesis. A single-writer local chain is enough to learn whether the
+idea is alive. Add nodes only if it is — and note that the single-continuous-
+object design already commits you to forks resolving to one live thread, which
+is exactly what blockchain consensus is built to do.
