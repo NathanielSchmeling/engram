@@ -1,0 +1,599 @@
+[
+  {
+    "index": 0,
+    "prev_hash": "GENESIS",
+    "timestamp": 1780009732.7501056,
+    "raw_ref": "8ca475661c7bcca32abbe45841036d1d814fc35604571211692afb490955258b",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_1",
+        "content": "the user works mostly in Python",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "0feae231446ae89ac7103cacc0aa068ac3ddc186de325e92fbd7d52337c6c5fb",
+    "hash": "e029f5fdfd89e42607aaa228c50ab95a2865c8700764885ef29128ee4ad1a1ca"
+  },
+  {
+    "index": 1,
+    "prev_hash": "e029f5fdfd89e42607aaa228c50ab95a2865c8700764885ef29128ee4ad1a1ca",
+    "timestamp": 1780009760.4990628,
+    "raw_ref": "fcfac36085cc2a28d00dd871102e7bad8959d0e3418b39cb46ff21146e2a12fb",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_2",
+        "content": "the user is building a memory system for AI assistants",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "26154d71c1acf286c94c7b884c50a2ba1c7d6e640dc579f71b90bf96f27f1c22",
+    "hash": "8998436e0b60279076cb0aa56355371726a1166451c28ebcf7f596a47b505dc0"
+  },
+  {
+    "index": 2,
+    "prev_hash": "8998436e0b60279076cb0aa56355371726a1166451c28ebcf7f596a47b505dc0",
+    "timestamp": 1780009791.3636274,
+    "raw_ref": "7b6afab2e25efdfd4a2779d7ba9373b7344bc6cbb44ba1a05c9e359241b71888",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_3",
+        "content": "the user is using a coffee break as an aside",
+        "type": "event",
+        "salience": 0.8
+      }
+    ],
+    "state_root": "238355a6d5d249c1a6bb2baa7f5816b8e23b5b0dac04712e4fe375580ec5c2d6",
+    "hash": "64786fa9fac9062d6e16a9b78754b5301b6b7f220b78ea1119f8dd7a1a604646"
+  },
+  {
+    "index": 3,
+    "prev_hash": "64786fa9fac9062d6e16a9b78754b5301b6b7f220b78ea1119f8dd7a1a604646",
+    "timestamp": 1780009823.1073713,
+    "raw_ref": "da81a62dbcaaa096ce16ee335073a7cd1750f6e5022cb246119f960ceb0b454f",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_4",
+        "content": "the user is using 'episode' as a unit of memory",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "36d826049ad1d8936425fd2a994b90623df3b651d5e70e9fca1521b6b72908d6",
+    "hash": "5a53c6460a8579e20e324fdb5db400922b1e6633eefc2df30569e91cfe09cc54"
+  },
+  {
+    "index": 4,
+    "prev_hash": "5a53c6460a8579e20e324fdb5db400922b1e6633eefc2df30569e91cfe09cc54",
+    "timestamp": 1780009861.1662395,
+    "raw_ref": "408ca8018b326b53072a81d1ec6e594536e13c0edd4004ba40bed4f491481fef",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_5",
+        "content": "the user prefers a small and readable system for building AI memory systems",
+        "type": "preference",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "18825bd69f38e1b235818b6d2744869f09acff826c96d6d8fcab9b60b9bd0005",
+    "hash": "0ae27cd7b23b3974f0e3db4e610c72f6f13abf5f6a99b102c082a5c011606911"
+  },
+  {
+    "index": 5,
+    "prev_hash": "0ae27cd7b23b3974f0e3db4e610c72f6f13abf5f6a99b102c082a5c011606911",
+    "timestamp": 1780009897.8404624,
+    "raw_ref": "514723276b1beb7293f738603c04f0301aa87e18552db63d86ba5fcf6a3ad308",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_6",
+        "content": "the user has a background in backend development, microservices, and APIs",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "2827c60b4f003660c0bdf688110485c605c00cb3960bcaccbb0587d451fbae6f",
+    "hash": "e137357033fbc58f4b2bd40ade86bfffb02380e9af6755034432072cf34f4369"
+  },
+  {
+    "index": 6,
+    "prev_hash": "e137357033fbc58f4b2bd40ade86bfffb02380e9af6755034432072cf34f4369",
+    "timestamp": 1780009939.4143918,
+    "raw_ref": "095e5c1de2d78d4773ccfd959b5c8c3028b07c3d559b67a4ac11c15282c7e434",
+    "delta": [],
+    "state_root": "2827c60b4f003660c0bdf688110485c605c00cb3960bcaccbb0587d451fbae6f",
+    "hash": "9b0aec254178a810dc86c4b97e0481082a0f426b76a2df89db755b28d0d7d0f9"
+  },
+  {
+    "index": 7,
+    "prev_hash": "9b0aec254178a810dc86c4b97e0481082a0f426b76a2df89db755b28d0d7d0f9",
+    "timestamp": 1780009974.0865173,
+    "raw_ref": "df457b7dea869c10cbf42b1c1c2948dd77eade096fffb623b5ccd8c64ef48637",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_7",
+        "content": "the user emphasizes the importance of auditability in architectural decisions",
+        "type": "insight",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "425f8bedb7385175b522b1891e88fc375d8965dad8cb1af5df2d4f71d5e1c670",
+    "hash": "2218106e2423c374f628fbf4f498c5c877a6586080e79f54e58307fc272a07a9"
+  },
+  {
+    "index": 8,
+    "prev_hash": "2218106e2423c374f628fbf4f498c5c877a6586080e79f54e58307fc272a07a9",
+    "timestamp": 1780010010.217219,
+    "raw_ref": "513bad75e17427bb22dff8c90f49f71bd3201b0b3393187d591468f77a155b83",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_8",
+        "content": "the user is currently in Chicago working from home",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "707dc2c745f666a0345698b5749d0570d287814ea66babf0aa497a6f11c62c39",
+    "hash": "943a97a6d3ab0afca504fda029aa5a2c0a06ae4c8a90c0f8d5edaf5bddb4a241"
+  },
+  {
+    "index": 9,
+    "prev_hash": "943a97a6d3ab0afca504fda029aa5a2c0a06ae4c8a90c0f8d5edaf5bddb4a241",
+    "timestamp": 1780010052.516233,
+    "raw_ref": "7394496b23ba4b9516e3c9fdba1802d144890779e5d2f6c177d1f704cc566b83",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_9",
+        "content": "the user prefers to hand-roll dependencies rather than use heavy libraries",
+        "type": "preference",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "08f3410351b8277629ad0adf28daa2985c38b739da5d9bcc703b4d14f458934d",
+    "hash": "eeb6ce368e979a94b96f8fda15810a3ea021692edd161eb7f877d87094bf7786"
+  },
+  {
+    "index": 10,
+    "prev_hash": "eeb6ce368e979a94b96f8fda15810a3ea021692edd161eb7f877d87094bf7786",
+    "timestamp": 1780010205.0603533,
+    "raw_ref": "26f1a264f8b860d392134e7e15d0bc406018e1f82f8788f9d73f303cef7e9d78",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_10",
+        "content": "the user needs to pick up groceries later",
+        "type": "event",
+        "salience": 0.8
+      }
+    ],
+    "state_root": "a507986404966b0c22ea875ad3beec160d5fc3326306d92aa1465d1fa4e90876",
+    "hash": "5ca54b89d6cc51b3524ee6ee79e7308cc5bd753d6f2cb72d8c9dbf6db2974166"
+  },
+  {
+    "index": 11,
+    "prev_hash": "5ca54b89d6cc51b3524ee6ee79e7308cc5bd753d6f2cb72d8c9dbf6db2974166",
+    "timestamp": 1780010242.1462383,
+    "raw_ref": "10889a5009844c43533f75b4fed0968f0e000548d08d6097acf88ebbab430d66",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_11",
+        "content": "the user prefers flat files over SQLite for storage",
+        "type": "preference",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "f55ad2c6631ba8b299f1afd21f57d31606b251f11c0d63d89bed0ad4340bb3f8",
+    "hash": "a53ccef76fa8f30c08cc696d50925f808a5cd7db02a68c0910c973a6c8c221bb"
+  },
+  {
+    "index": 12,
+    "prev_hash": "a53ccef76fa8f30c08cc696d50925f808a5cd7db02a68c0910c973a6c8c221bb",
+    "timestamp": 1780010281.7931142,
+    "raw_ref": "1a6a3cfcc9ca2fcf5c668ef7573cfc5fbb14b85240e951008e464ce39c5b592b",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_12",
+        "content": "the user prefers transparent code over clever code",
+        "type": "preference",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "7a367229cb672659160a2aac555b5f22da877704a377a2df1a7d3841f3138891",
+    "hash": "f4cc6258a16076af604617b3b014263e991ee3df6bb3fa68ff69a6de7d19ec09"
+  },
+  {
+    "index": 13,
+    "prev_hash": "f4cc6258a16076af604617b3b014263e991ee3df6bb3fa68ff69a6de7d19ec09",
+    "timestamp": 1780010320.107575,
+    "raw_ref": "3dbb3da1ea48a029975a2360bbda3d2d743df349008d12ff35bc4ccedf842e70",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_13",
+        "content": "the user is working on consolidation logic for turning experiences into memories",
+        "type": "event",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "24349dc246d0e409bb580186a5d3d8a245265115051870ff99194cde89f92480",
+    "hash": "94ef088b1776bbb74ef5647f6bb7e55abda48c2f953d2a5e90927a97d88300ad"
+  },
+  {
+    "index": 14,
+    "prev_hash": "94ef088b1776bbb74ef5647f6bb7e55abda48c2f953d2a5e90927a97d88300ad",
+    "timestamp": 1780010359.008649,
+    "raw_ref": "5c461cec6940a25e103ba5dcbd9abdf088e24c2f8c2769a0246c3712b8524c04",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_14",
+        "content": "the user prefers raw SQL over ORMs for projects",
+        "type": "preference",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "5b324ff6a0967bc5d727a6ba625c8aa47d43aa60b1631c944db80f64a847535e",
+    "hash": "3f038bd26afc0006addb3accc69ec2fa6216c00e56fd920f45010c7ac7701063"
+  },
+  {
+    "index": 15,
+    "prev_hash": "3f038bd26afc0006addb3accc69ec2fa6216c00e56fd920f45010c7ac7701063",
+    "timestamp": 1780010396.6374018,
+    "raw_ref": "f4e09129e992f3a8ecc6540ceea14f216fb2f646289b6026900217fc9a1421fe",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_15",
+        "content": "the user's project is mentioned on Twitter",
+        "type": "event",
+        "salience": 0.8
+      }
+    ],
+    "state_root": "d2ff9b4dbe0deb8fc00edf8e8e5fc08cf8c7242b94e79d7f201d8b174b039d82",
+    "hash": "0062ee33e65317087c9ec32fc5565b2dd85c697ad4aac0e21aef73b6cd5ee409"
+  },
+  {
+    "index": 16,
+    "prev_hash": "0062ee33e65317087c9ec32fc5565b2dd85c697ad4aac0e21aef73b6cd5ee409",
+    "timestamp": 1780010438.4988048,
+    "raw_ref": "86915bf79ce41b1d5ab5b7456ae2c130ad387665b0ac02b12e1029a44f165078",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_16",
+        "content": "The user prefers traces to be append-only.",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "9921a8054be9493cd2980e996aee87649436fadd0000291851b8e54101aa181e",
+    "hash": "b37aec69cddfd0aaf66c395580ea6087f9349b1e46019290d9344acecd3555ac"
+  },
+  {
+    "index": 17,
+    "prev_hash": "b37aec69cddfd0aaf66c395580ea6087f9349b1e46019290d9344acecd3555ac",
+    "timestamp": 1780010474.060748,
+    "raw_ref": "93b03ae608fc0d5f6459f205c802125b9dcf26ea769aed8b0c5d62bde85ac8f9",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_17",
+        "content": "the user is enjoying their second cup of coffee today",
+        "type": "event",
+        "salience": 0.8
+      }
+    ],
+    "state_root": "0f6fa4142af1dc38c8fff6d24fec59a7e8a88731beb4ae19eff49df4bca31df6",
+    "hash": "e5f63226a0bda3d529293f5ce86ee48720ad87349adcd2b7d4cb70b7110b99a8"
+  },
+  {
+    "index": 18,
+    "prev_hash": "e5f63226a0bda3d529293f5ce86ee48720ad87349adcd2b7d4cb70b7110b99a8",
+    "timestamp": 1780010513.610437,
+    "raw_ref": "364aeb294e88b08124139760becf3ba405ba5d0aeb05b86f9da8622cfd95eb27",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_18",
+        "content": "the user values clear explanations of their work",
+        "type": "insight",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "c2236ab571495acabf95a1d1188f839852868ed122dae1cb0c74975dbeae38c1",
+    "hash": "0c7215bb08e3f69c10a679bfb969684aeb0a100aacf89d3a4429635becdbd7f9"
+  },
+  {
+    "index": 19,
+    "prev_hash": "0c7215bb08e3f69c10a679bfb969684aeb0a100aacf89d3a4429635becdbd7f9",
+    "timestamp": 1780010555.090183,
+    "raw_ref": "03c4289f07dd88aac2056c70e6d23ef61b55f13a1d005f6fe0e03d8e1957017f",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_19",
+        "content": "the user spends time debugging code",
+        "type": "behavior",
+        "salience": 0.8
+      }
+    ],
+    "state_root": "c9a6a04b8dd16a6786c1df3da88d86c5f20eec8ce91d8c8eed84ea4a8c89e351",
+    "hash": "456d8a62b7c6bdac82924b236d071caa884aa6c1ce3f922ab8b62534c82d1c40"
+  },
+  {
+    "index": 20,
+    "prev_hash": "456d8a62b7c6bdac82924b236d071caa884aa6c1ce3f922ab8b62534c82d1c40",
+    "timestamp": 1780010688.8908749,
+    "raw_ref": "4a08351466d373ceda9576656c9f1f65ce7e1c17dad16971103fa32c3a7afb45",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_20",
+        "content": "the user writes type hints for all code",
+        "type": "fact",
+        "salience": 0.9
+      },
+      {
+        "op": "reinforce",
+        "id": "ep_1",
+        "salience_delta": 0.1
+      }
+    ],
+    "state_root": "878c9bd0c56e980cc7b1be27b5ac6b7e886854186b2bfe3a22aba9d5292e8c13",
+    "hash": "690e502aa32bae02342a506ec85747f30189fb3dd089dadda700eef0e0ed9bd6"
+  },
+  {
+    "index": 21,
+    "prev_hash": "690e502aa32bae02342a506ec85747f30189fb3dd089dadda700eef0e0ed9bd6",
+    "timestamp": 1780010726.2933903,
+    "raw_ref": "87d624390415c74338df09cd364a652f813b2031c53b3c7f64481981dc891b01",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_21",
+        "content": "the user emphasizes the importance of integrity in their project",
+        "type": "insight",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "02168a8d9b73af6a36afc6c0384e3dab07c8a5800fb94e9fdb0eb05064737642",
+    "hash": "08139d960cdb0d95ed3c8c7fdc00410b89a51a0cc3195d116b23a942d16d7d7d"
+  },
+  {
+    "index": 22,
+    "prev_hash": "08139d960cdb0d95ed3c8c7fdc00410b89a51a0cc3195d116b23a942d16d7d7d",
+    "timestamp": 1780010765.41575,
+    "raw_ref": "a6c942d86caedd00f755d7935bf33835b350b1e8652cd3739a1ff22d7c473ddf",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_22",
+        "content": "the user has been working on their project for about two weeks",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "0d59b316befba8a46ae9023055feac52f84a29f2ad858326925226b75226c08d",
+    "hash": "6561af85e92535bf6a0a2f0d4a8732b483779ecfd2974ce577e21b4d1c8a5e90"
+  },
+  {
+    "index": 23,
+    "prev_hash": "6561af85e92535bf6a0a2f0d4a8732b483779ecfd2974ce577e21b4d1c8a5e90",
+    "timestamp": 1780010806.0810244,
+    "raw_ref": "63103eeed916cbaa3bdc5f205b1bedced0e5143aaad2ef8b898644b34d28a6a2",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_23",
+        "content": "the user wants to complete one more task before stopping work for the day",
+        "type": "event",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "2f39e773fcd0b7e8c0db5d630b0c012da5280037fed2d775a70eee5640025265",
+    "hash": "d30b9cc3e60222e290016edfd2172f73c2d326f6342afe63d702f56973f95442"
+  },
+  {
+    "index": 24,
+    "prev_hash": "d30b9cc3e60222e290016edfd2172f73c2d326f6342afe63d702f56973f95442",
+    "timestamp": 1780010845.5408523,
+    "raw_ref": "273a97e538105eb193ea8d60724dec096afc549904e8eb292ddb332382cbb1bf",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_24",
+        "content": "the user prefers to call a unit of memory a trace",
+        "type": "fact",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "77536e6e22a5446ac23075e411fbea2c29d86a777e522df3da84d1ddda0e5127",
+    "hash": "58618041f79569c1fe41e9a567a5de044dcdab8979d10d7406944bf0fdf0aa25"
+  },
+  {
+    "index": 25,
+    "prev_hash": "58618041f79569c1fe41e9a567a5de044dcdab8979d10d7406944bf0fdf0aa25",
+    "timestamp": 1780010882.8667252,
+    "raw_ref": "075bfa205a9123c1b8aa91f710174e1f58645b59e0284781c193f2851f47dfc5",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_25",
+        "content": "the user emphasizes the importance of auditability over performance",
+        "type": "insight",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "4abc96571d3cd8cb443091107a22e789e8c3c835c3bcc94436ab98e683c2cd1b",
+    "hash": "959ea0d3a45304d4f40a5d9885635004c8fbdd808d62b1b2292f50b0a66a84ec"
+  },
+  {
+    "index": 26,
+    "prev_hash": "959ea0d3a45304d4f40a5d9885635004c8fbdd808d62b1b2292f50b0a66a84ec",
+    "timestamp": 1780010921.4651155,
+    "raw_ref": "5176d9b55f27970a37b891c8f2fa47fdfc79035e689c5fcba899ec7484bbc836",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_26",
+        "content": "the user is having a day of overthinking architecture",
+        "type": "insight",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "f388324c0ff3cb34f4a0c14a74fe64e9a3a9ffd61d39628d56012e9d37778068",
+    "hash": "f4f9c5c5386f465abcb364c852a73572e503f9e62a8023b2f5a2a98b375945d0"
+  },
+  {
+    "index": 27,
+    "prev_hash": "f4f9c5c5386f465abcb364c852a73572e503f9e62a8023b2f5a2a98b375945d0",
+    "timestamp": 1780010963.6941242,
+    "raw_ref": "7586f2da31065718b02dce3e1e298a5e985efe77b0fcda18a5b95610be7119ef",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_27",
+        "content": "the user plans to write documentation for their project",
+        "type": "event",
+        "salience": 0.8
+      }
+    ],
+    "state_root": "12b48af1b076e1aa5270ec0351a65eb5cf5b2394e5fd007619ee7f720baef426",
+    "hash": "a234f90d403110cba2b9c1a2912bc67721f09c05b60fe1e6316da3ff5ac8bd99"
+  },
+  {
+    "index": 28,
+    "prev_hash": "a234f90d403110cba2b9c1a2912bc67721f09c05b60fe1e6316da3ff5ac8bd99",
+    "timestamp": 1780011002.7695863,
+    "raw_ref": "ae9e805debb0c9a3691df10b91dbaf41ff555b9fb8e88214ddbd093d465a52c5",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_28",
+        "content": "the user cares about making their project reproducible for other developers",
+        "type": "insight",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "fb7177ef59d7fbc20882b7ca61015c95e744b24b97639ce1af78018d5b87a35c",
+    "hash": "7505485df9eb589fa4e8ac0f9f11a9c6c51f8fa9024f29cb4c516c44f37c18a1"
+  },
+  {
+    "index": 29,
+    "prev_hash": "7505485df9eb589fa4e8ac0f9f11a9c6c51f8fa9024f29cb4c516c44f37c18a1",
+    "timestamp": 1780011039.373353,
+    "raw_ref": "ab96a0ffdbaa575a5795af01ec1df31380287eabdd77f4db211dc480ddf3ade6",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_29",
+        "content": "the user is ending their session",
+        "type": "event",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "16caa9c5c0ace53fa527e349b48c822a0d9523f3285bbd1f20917351de74b5ea",
+    "hash": "3fa03e0293dbfcc4d05d2205223c407957ddbfc2839d4eae76b3ce2063ba02dc"
+  },
+  {
+    "index": 30,
+    "prev_hash": "3fa03e0293dbfcc4d05d2205223c407957ddbfc2839d4eae76b3ce2063ba02dc",
+    "timestamp": 1780011180.1061795,
+    "raw_ref": "4db0d485407e843da4f948587da46b5428dfc48265e83e522ce1b351e053e523",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_30",
+        "content": "the user considers heavy frameworks more manageable due to handling edge cases",
+        "type": "insight",
+        "salience": 0.8
+      }
+    ],
+    "state_root": "fe44df378fcba2d9a501f5cadd23b18cbfdacc096c3b5ed58cef823d85d86731",
+    "hash": "ff95c67906f467ac2802e1ae97773e5748911b33ef337ec1788dce5f81acc4c4"
+  },
+  {
+    "index": 31,
+    "prev_hash": "ff95c67906f467ac2802e1ae97773e5748911b33ef337ec1788dce5f81acc4c4",
+    "timestamp": 1780011220.5371752,
+    "raw_ref": "7e5042af8243a0d9486bc913d814e9517ef992f3be04b63bed60eaf5d0459afe",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_31",
+        "content": "the user is reconsidering using modern frameworks for their dependencies",
+        "type": "insight",
+        "salience": 0.9
+      },
+      {
+        "op": "reinforce",
+        "id": "ep_9",
+        "salience_delta": 0.1
+      }
+    ],
+    "state_root": "5c35f77081e334b9e423154d8a9eaff4c894410168f69588b31312d721021035",
+    "hash": "bd3f8825fd597612cd3eae74d65f1bffdc9af1f9e90a12c8640a62c7e70a1e50"
+  },
+  {
+    "index": 32,
+    "prev_hash": "bd3f8825fd597612cd3eae74d65f1bffdc9af1f9e90a12c8640a62c7e70a1e50",
+    "timestamp": 1780011262.104459,
+    "raw_ref": "a93811c82814b289c601d6f10001166ac1ebf4a756d81825128b1ac1c27fd0ac",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_32",
+        "content": "the user prefers a 200-line clear function over a 50-line clever one unless it is well-commented",
+        "type": "preference",
+        "salience": 0.8
+      }
+    ],
+    "state_root": "ae8bb90cad250bbd383a625c357f006a47b028ab0d620e60cb869c7c29caf464",
+    "hash": "95aa13615063bdac2f1dda64e85618352ea4595e74852209919b0d2327d7507b"
+  },
+  {
+    "index": 33,
+    "prev_hash": "95aa13615063bdac2f1dda64e85618352ea4595e74852209919b0d2327d7507b",
+    "timestamp": 1780011301.9173665,
+    "raw_ref": "e47bba3fabfff7c2e0e4f6edc08a54e4a3780b632ada7069fb9950cf1f3f4f05",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_33",
+        "content": "the user prefers ORMs but acknowledges their usefulness",
+        "type": "insight",
+        "salience": 0.8
+      }
+    ],
+    "state_root": "d9001add93fec2c427eb6487bcf630f7f9cb33783ce6e400f505f3cb7825215e",
+    "hash": "e55a85032e67ba32116fc70f36195a1b76b93719c0c4e290a18544ba0e3db9fb"
+  },
+  {
+    "index": 34,
+    "prev_hash": "e55a85032e67ba32116fc70f36195a1b76b93719c0c4e290a18544ba0e3db9fb",
+    "timestamp": 1780011339.6670797,
+    "raw_ref": "81c2c3855ea37a43ddc88ad9cc7efd844d70252b6e9c2cdc42a5c8db6916370b",
+    "delta": [
+      {
+        "op": "new",
+        "id": "ep_34",
+        "content": "the user is reconsidering their strict stance on minimal dependencies",
+        "type": "insight",
+        "salience": 0.9
+      }
+    ],
+    "state_root": "6cf2ef870efba1bb0fa4908bee5b76622d76a4e7e679eafce634f8f9fa41902e",
+    "hash": "ca52b46e86e039eba5e9b2483b43cce9e75150b3e59c61c4679aad477ca83573"
+  }
+]
