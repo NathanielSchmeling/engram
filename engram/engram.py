@@ -46,6 +46,36 @@ class Engram:
         # 4. respond: act as a self shaped by what it registered
         return llm(REPLY_PROMPT.format(memories=mem_str, message=message))
 
+    def probe(self, question: str) -> str:
+        """Read-only query: retrieve and reply without consolidating or
+        advancing the chain. Used by the experiment to ask the self questions
+        at checkpoints without that act of asking itself becoming a memory."""
+        recalled = self.memory.retrieve(embed(question), len(self.chain), k=8)
+        mem_str = "\n".join(f"- {e.content}" for e in recalled) or "- (no memories yet)"
+        return llm(REPLY_PROMPT.format(memories=mem_str, message=question))
+
+    def dynamics(self) -> dict:
+        """Counters across the whole chain: how much the memory has
+        restructured itself versus merely accumulated.
+
+        A live memory has meaningful reinforce and supersede counts. A dead
+        log would have only `new`. The ratio of restructuring ops to new ops
+        is a direct measure of whether the memory is metabolizing experience.
+        """
+        counts = {"new": 0, "reinforce": 0, "supersede": 0, "gist": 0}
+        for b in self.chain.blocks:
+            for op in b.delta:
+                k = op.get("op")
+                if k in counts:
+                    counts[k] += 1
+        total_restructure = counts["reinforce"] + counts["supersede"] + counts["gist"]
+        counts["restructure_ratio"] = (
+            total_restructure / counts["new"] if counts["new"] else 0.0
+        )
+        counts["total_episodes_live"] = len(self.memory.live())
+        counts["total_blocks"] = len(self.chain)
+        return counts
+
     def compress(self) -> dict:
         return compress(self.memory, self.chain, embed)
 
